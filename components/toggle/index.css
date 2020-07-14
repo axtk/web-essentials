@@ -1,0 +1,53 @@
+input[type=radio][data-shape~=toggle],
+input[type=checkbox][data-shape~=toggle] {
+    display: inline-block;
+    font-size: 1em;
+    width: var(--toggle-width);
+    height: var(--toggle-height);
+    background-color: var(--text-background);
+    background-image: var(--toggle-image-url);
+    background-position: 0 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: calc(.5*var(--toggle-height));
+    border: none;
+    box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
+    box-sizing: border-box;
+    margin: 0;
+    vertical-align: baseline;
+    position: relative;
+    top: var(--toggle-position-y);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: var(--clickable-cursor);
+    transition: background-color .2s, background-position .2s, box-shadow .2s;
+}
+input[type=radio][data-shape~=toggle]:checked,
+input[type=checkbox][data-shape~=toggle]:checked {
+    background-image: var(--highlighted-toggle-image-url);
+    background-color: var(--highlight-background);
+    background-position: 100% 50%;
+    box-shadow: inset 0 0 0 var(--border-width) var(--highlight-border-color);
+}
+input[type=radio][data-shape~=toggle]:focus,
+input[type=checkbox][data-shape~=toggle]:focus {
+    box-shadow: inset 0 0 0 var(--border-width) var(--border-color), var(--focused-box-shadow);
+    outline: none;
+}
+input[type=radio][data-shape~=toggle]:checked:focus,
+input[type=checkbox][data-shape~=toggle]:checked:focus {
+    box-shadow: inset 0 0 0 var(--border-width) var(--highlight-border-color), var(--focused-box-shadow);
+}
+[data-focus-ring=none] input[type=radio][data-shape~=toggle]:focus,
+[data-focus-ring=none] input[type=checkbox][data-shape~=toggle]:focus {
+    box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
+}
+[data-focus-ring=none] input[type=radio][data-shape~=toggle]:checked:focus,
+[data-focus-ring=none] input[type=checkbox][data-shape~=toggle]:checked:focus {
+    box-shadow: inset 0 0 0 var(--border-width) var(--highlight-border-color);
+}
+input[type=radio][data-shape~=toggle]::-ms-check,
+input[type=checkbox][data-shape~=toggle]::-ms-check {
+    opacity: 0;
+}

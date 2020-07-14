@@ -1,0 +1,42 @@
+[role=status][data-shape~=pulse] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -9999em;
+    border-radius: 50%;
+    box-sizing: border-box;
+    vertical-align: text-bottom;
+    position: relative;
+}
+[role=status][data-shape~=pulse]::after {
+    content: "";
+    display: block;
+    width: .5em;
+    height: .5em;
+    background: var(--highlight-background);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1.25s linear infinite;
+}
+@keyframes pulse {
+    0% {
+        width: .6em;
+        height: .6em;
+        opacity: .35;
+    }
+    50% {
+        width: 1em;
+        height: 1em;
+        opacity: 1;
+    }
+    100% {
+        width: .6em;
+        height: .6em;
+        opacity: .35;
+    }
+}

@@ -1,0 +1,44 @@
+[data-shape~=messagebox] {
+    width: 24em;
+    max-width: 96wv;
+    color: var(--text-color);
+    background: var(--text-background);
+    border: var(--border);
+    border-radius: var(--control-border-radius);
+    padding: 1.25em 1.5em;
+    box-sizing: border-box;
+}
+[data-shape~=messagebox] h1 {
+    margin: 0;
+}
+[data-shape~=messagebox] h1 ~ section,
+[data-shape~=messagebox] h1 ~ [role=toolbar],
+[data-shape~=messagebox] section ~ [role=toolbar] {
+    margin-top: 1em;
+}
+[data-shape~=messagebox] section :first-child {
+    margin-top: 0;
+}
+[data-shape~=messagebox] section :last-child {
+    margin-bottom: 0;
+}
+[data-shape~=messagebox] [role=toolbar] {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+[data-shape~=messagebox] [role=toolbar] button,
+[data-shape~=messagebox] [role=toolbar] [role=button],
+[data-shape~=messagebox] [role=toolbar] [data-shape~=button] {
+    margin-left: .75em;
+}
+/* rtl */
+[dir=rtl] [data-shape~=messagebox] [role=toolbar],
+[data-shape~=messagebox][dir=rtl] [role=toolbar] {
+    justify-content: flex-start;
+}
+[dir=rtl] [data-shape~=messagebox] [role=toolbar][data-shape~=rtl-flip],
+[data-shape~=messagebox][dir=rtl] [role=toolbar][data-shape~=rtl-flip] {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}

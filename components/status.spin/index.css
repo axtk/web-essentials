@@ -1,0 +1,28 @@
+[role=status][data-shape~=spin] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -9999em;
+    border: .16em solid var(--highlight-background);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    vertical-align: text-bottom;
+    position: relative;
+    animation: spin 1s linear infinite;
+}
+[role=status][data-shape~=spin][data-shape~=dashed] {
+    border: .14em dashed var(--highlight-background);
+    animation-duration: 1.8s;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

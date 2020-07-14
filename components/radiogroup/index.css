@@ -1,0 +1,54 @@
+[role=radiogroup] {
+    display: inline-block;
+    vertical-align: bottom;
+    border: none;
+    border-radius: var(--control-border-radius);
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+}
+[role=radiogroup]::after {
+    content: "";
+    clear: left;
+}
+[role=radiogroup] [type=radio] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+}
+[role=radiogroup] [type=radio]:checked + [role=button],
+[role=radiogroup] [type=radio]:checked + [data-shape~=button] {
+    color: var(--highlight-color);
+    background-color: var(--highlight-background);
+}
+[role=radiogroup] [role=button] ~ [role=button],
+[role=radiogroup] [data-shape~=button] ~ [data-shape~=button] {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-width: 0;
+}
+[role=radiogroup] [role=button]:not(:last-child),
+[role=radiogroup] [data-shape~=button]:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+[role=radiogroup] [role=button],
+[role=radiogroup] [data-shape~=button] {
+    float: left;
+    box-shadow: none;
+}
+[role=radiogroup]:focus-within,
+[role=radiogroup]:active,
+/* hover added to avoid blinking where focus-within is unsupported (macos) */
+[role=radiogroup]:hover {
+    box-shadow: var(--focused-box-shadow);
+    outline: none;
+}
+[data-focus-ring=none] [role=radiogroup]:focus-within,
+[data-focus-ring=none] [role=radiogroup]:active,
+[data-focus-ring=none] [role=radiogroup]:hover {
+    box-shadow: none;
+}

@@ -1,0 +1,18 @@
+img[data-shape~=glyph],
+svg[data-shape~=glyph],
+img[data-shape~=glyph][data-shape~=em],
+svg[data-shape~=glyph][data-shape~=em] {
+    width: auto;
+    height: 1em;
+    vertical-align: text-bottom;
+}
+img[data-shape~=glyph][data-shape~=cap],
+svg[data-shape~=glyph][data-shape~=cap] {
+    height: var(--cap-height);
+    vertical-align: baseline;
+}
+img[data-shape~=glyph][data-shape~=ex],
+svg[data-shape~=glyph][data-shape~=ex] {
+    height: var(--ex-height);
+    vertical-align: baseline;
+}

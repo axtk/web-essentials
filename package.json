@@ -1,0 +1,16 @@
+{
+  "name": "web-essentials",
+  "version": "1.0.0",
+  "repository": "github:axtk/web-essentials",
+  "scripts": {
+    "postinstall": "node ./bundle.js"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "customization",
+    "minimalism"
+  ],
+  "author": "axtk",
+  "license": "ISC"
+}

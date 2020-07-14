@@ -1,0 +1,25 @@
+dialog::before,
+[role=dialog]::before {
+    content: "";
+    display: block;
+    background: var(--text-color);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: .5;
+    z-index: 9899;
+}
+dialog [data-shape~=messagebox],
+[role=dialog] [data-shape~=messagebox] {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+dialog[hidden]:target,
+[role=dialog][hidden]:target {
+    display: block;
+}

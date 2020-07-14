@@ -1,0 +1,67 @@
+a,
+[role=link],
+[data-shape~=link],
+button[role=link],
+button[data-shape~=link] {
+    display: inline;
+    font: inherit;
+    line-height: inherit;
+    color: var(--link-color);
+    text-decoration: underline;
+    background: transparent none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    cursor: var(--clickable-cursor);
+    position: relative;
+}
+a:hover,
+[role=link]:hover,
+[data-shape~=link]:hover {
+    color: var(--link-hover-color);
+}
+a:focus,
+[role=link]:focus,
+[data-shape~=link]:focus,
+[data-shape~=link]:focus-within {
+    box-shadow: var(--focused-box-shadow);
+    outline: none;
+}
+[data-focus-ring=none] a:focus,
+[data-focus-ring=none] [role=link]:focus,
+[data-focus-ring=none] [data-shape~=link]:focus,
+[data-focus-ring=none] [data-shape~=link]:focus-within {
+    box-shadow: none;
+}
+[data-focus-ring=none] button[data-shape~=link]:hover,
+[data-focus-ring=none] button[data-shape~=link]:active,
+[data-focus-ring=none] button[data-shape~=link]:focus {
+    box-shadow: none;
+}
+button[role=link]::after,
+button[data-shape~=link]::after {
+    display: none;
+}
+button[role=link]::-moz-focus-inner,
+button[data-shape~=link]::-moz-focus-inner {
+    border: none;
+}
+[data-shape~=link] [type=file] {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 1;
+    cursor: var(--clickable-cursor);
+}
+[data-shape~=link] [type=file] + label[hidden] {
+    display: inline;
+}
+[data-shape~=link] [type=file]::-webkit-file-upload-button {
+    width: 0;
+    cursor: var(--clickable-cursor);
+}

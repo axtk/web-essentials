@@ -1,0 +1,241 @@
+button,
+[role=button],
+a[role=button],
+input[type=button],
+input[type=submit],
+input[type=reset],
+[data-shape~=button],
+a[data-shape~=button] {
+    display: inline-block;
+    font: inherit;
+    line-height: var(--control-line-height);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--text-color);
+    background-color: var(--text-background);
+    border: var(--border);
+    border-radius: var(--control-border-radius);
+    box-shadow: none;
+    padding: var(--control-padding-y) var(--button-padding-x);
+    margin: 0;
+    box-sizing: border-box;
+    cursor: var(--clickable-cursor);
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none; /* safari */
+}
+li[role=button],
+li[data-shape~=button] {
+    list-style: none;
+}
+button::after,
+[role=button]::after,
+a[role=button]::after,
+[data-shape~=button]::after,
+a[data-shape~=button]::after {
+    content: "";
+    display: block;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color .3s;
+}
+a[role=button]:hover,
+a[data-shape~=button]:hover {
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--text-background);
+    border: var(--border);
+}
+button:focus,
+[role=button]:focus,
+a[role=button]:focus,
+input[type=button]:focus,
+input[type=submit]:focus,
+input[type=reset]:focus,
+[data-shape~=button]:focus,
+[data-shape~=button]:focus-within,
+a[data-shape~=button]:focus {
+    box-shadow: var(--focused-box-shadow);
+    outline: none;
+}
+button:hover::after,
+[role=button]:hover::after,
+a[role=button]:hover::after,
+input[type=button]:hover::after,
+input[type=submit]:hover::after,
+input[type=reset]:hover::after,
+[data-shape~=button]:hover::after,
+a[role=button]:hover::after,
+a[data-shape~=button]:hover::after {
+    background-color: var(--control-hover-mask-background);
+}
+button:active::after,
+[role=button]:active::after,
+a[role=button]:active::after,
+input[type=button]:active::after,
+input[type=submit]:active::after,
+input[type=reset]:active::after,
+[data-shape~=button]:active::after,
+a[role=button]:active::after,
+a[data-shape~=button]:active::after {
+    background-color: var(--control-active-mask-background);
+}
+
+[data-focus-ring=none] button:focus,
+[data-focus-ring=none] [role=button]:focus,
+[data-focus-ring=none] a[role=button]:focus,
+[data-focus-ring=none] input[type=button]:focus,
+[data-focus-ring=none] input[type=submit]:focus,
+[data-focus-ring=none] input[type=reset]:focus,
+[data-focus-ring=none] [data-shape~=button]:focus,
+[data-focus-ring=none] [data-shape~=button]:focus-within,
+[data-focus-ring=none] a[data-shape~=button]:focus {
+    box-shadow: none;
+}
+
+/* shape boxless */
+button[data-shape~=boxless],
+[role=button][data-shape~=boxless],
+a[role=button][data-shape~=boxless],
+input[type=button][data-shape~=boxless],
+input[type=submit][data-shape~=boxless],
+input[type=reset][data-shape~=boxless],
+[data-shape~=button][data-shape~=boxless],
+a[data-shape~=button][data-shape~=boxless] {
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 0;
+    padding: var(--control-padding-y);
+}
+button[data-shape~=boxless]::after,
+[role=button][data-shape~=boxless]::after,
+a[role=button][data-shape~=boxless]::after,
+input[type=button][data-shape~=boxless]::after,
+input[type=submit][data-shape~=boxless]::after,
+input[type=reset][data-shape~=boxless]::after,
+[data-shape~=button][data-shape~=boxless]::after,
+a[data-shape~=button][data-shape~=boxless]::after {
+    display: none;
+}
+
+/* emphasized */
+button[data-shape~=emphasized],
+[role=button][data-shape~=emphasized],
+a[role=button][data-shape~=emphasized],
+input[type=button][data-shape~=emphasized],
+input[type=submit][data-shape~=emphasized],
+input[type=reset][data-shape~=emphasized],
+[data-shape~=button][data-shape~=emphasized],
+a[data-shape~=button][data-shape~=emphasized] {
+    color: var(--highlight-color);
+    background-color: var(--highlight-background);
+    border-color: var(--highlight-border-color);
+}
+
+/* busy */
+button[aria-busy=true],
+[role=button][aria-busy=true],
+a[role=button][aria-busy=true],
+input[type=button][aria-busy=true],
+input[type=submit][aria-busy=true],
+input[type=reset][aria-busy=true],
+[data-shape~=button][aria-busy=true],
+a[data-shape~=button][aria-busy=true] {
+    pointer-events: none;
+    overflow: hidden;
+}
+button[aria-busy=true]::after,
+[role=button][aria-busy=true]::after,
+a[role=button][aria-busy=true]::after,
+input[type=button][aria-busy=true]::after,
+input[type=submit][aria-busy=true]::after,
+input[type=reset][aria-busy=true]::after,
+[data-shape~=button][aria-busy=true]::after,
+a[data-shape~=button][aria-busy=true]::after {
+    display: block;
+    background-color: transparent;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        black,
+        black .5em,
+        transparent .5em,
+        transparent 1em
+    );
+    background-repeat: repeat-x;
+    animation: progress 25s linear infinite;
+    opacity: .075;
+    left: -1000%;
+    right: 0;
+}
+button::-moz-focus-inner,
+input[type=button]::-moz-focus-inner,
+input[type=submit]::-moz-focus-inner,
+input[type=reset]::-moz-focus-inner {
+    border: none;
+}
+@keyframes progress {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(90%);
+    }
+}
+
+/* type file */
+[data-shape~=button] [type=file] {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 1;
+    cursor: var(--clickable-cursor);
+}
+[data-shape~=button] [type=file] + label[hidden] {
+    display: inline;
+}
+[data-shape~=button] [type=file]::-webkit-file-upload-button {
+    width: 0;
+    cursor: var(--clickable-cursor);
+}
+
+/* icon */
+button [data-shape~=icon],
+[role=button] [data-shape~=icon],
+a[role=button] [data-shape~=icon],
+[data-shape~=button] [data-shape~=icon],
+a[data-shape~=button] [data-shape~=icon] {
+    width: auto;
+    height: var(--icon-size);
+    vertical-align: baseline;
+}
+button [data-shape~=icon],
+[role=button] [data-shape~=icon],
+a[role=button] [data-shape~=icon],
+[data-shape~=button] [data-shape~=icon],
+a[data-shape~=button] [data-shape~=icon] {
+    margin: 0 calc(.7*var(--button-padding-x) - var(--space-width)) 0 calc(-.3*var(--button-padding-x));
+}
+
+/* icon rtl */
+[dir=rtl] button [data-shape~=icon],
+[dir=rtl] [role=button] [data-shape~=icon],
+[dir=rtl] a[role=button] [data-shape~=icon],
+[dir=rtl] [data-shape~=button] [data-shape~=icon],
+[dir=rtl] a[data-shape~=button] [data-shape~=icon],
+button[dir=rtl] [data-shape~=icon],
+[role=button][dir=rtl] [data-shape~=icon],
+a[role=button][dir=rtl] [data-shape~=icon],
+[data-shape~=button][dir=rtl] [data-shape~=icon],
+a[data-shape~=button][dir=rtl] [data-shape~=icon] {
+    margin: 0 calc(-.3*var(--button-padding-x)) 0 calc(.7*var(--button-padding-x) - var(--space-width));
+}

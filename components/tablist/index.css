@@ -1,0 +1,67 @@
+[role=tablist] {
+    display: flex;
+    border: var(--border);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+ul[role=tablist] {
+    list-style: none;
+}
+[role=tablist] > li {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+[role=tablist] [role=tab] {
+    display: block;
+    line-height: var(--control-line-height);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: var(--control-padding-y) var(--button-padding-x);
+    padding-bottom: calc(var(--control-padding-y) + var(--tab-border-width));
+    border: none;
+    cursor: var(--clickable-cursor);
+    position: relative;
+}
+[role=tablist] [role=tab]::after {
+    display: block;
+    content: "";
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color .2s;
+}
+@media (hover: hover) {
+    [role=tablist] [role=tab]:hover::after {
+        background-color: var(--control-hover-mask-background);
+    }
+}
+[role=tablist] [role=tab]:focus {
+    box-shadow: none;
+    outline: none;
+}
+[role=tablist] [role=tab]:focus::after {
+    background-color: var(--control-hover-mask-background);
+}
+[data-focus-ring=none] [role=tablist] [role=tab]:not(:hover):focus::after {
+    background-color: transparent;
+}
+[role=tablist] [role=tab][aria-selected=true]::before {
+    content: "";
+    display: block;
+    height: var(--tab-border-width);
+    background-color: var(--highlight-background);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+[role=tablist] [role=separator] {
+    display: none;
+}

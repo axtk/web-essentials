@@ -1,0 +1,94 @@
+[role=tooltip],
+[data-shape~=tooltip],
+[role=status][data-shape~=messagebox],
+[data-shape~=status][data-shape~=messagebox] {
+    width: 24em;
+    max-width: 96wv;
+    font-size: .87em;
+    color: var(--tooltip-color);
+    background-color: var(--tooltip-background);
+    border: none;
+    padding: .75em 1.1em .9em;
+    box-sizing: border-box;
+    position: relative;
+}
+/* tail */
+[data-tail]::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: .4em solid var(--tooltip-background);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -48%) rotate(45deg);
+    box-sizing: border-box;
+}
+[data-tail=top-left]::after {
+    left: 1.3em;
+    top: 0;
+    transform: translate(0, -50%) rotate(45deg);
+}
+[data-tail=top-right]::after {
+    left: auto;
+    right: 1.3em;
+    top: 0;
+    transform: translate(0, -50%) rotate(45deg);
+}
+[data-tail=bottom-left]::after {
+    left: 1.3em;
+    top: auto;
+    bottom: 0;
+    transform: translate(0, 50%) rotate(-135deg);
+}
+[data-tail=bottom-center]::after {
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    transform: translate(-50%, 50%) rotate(-135deg);
+}
+[data-tail=bottom-right]::after {
+    left: auto;
+    right: 1.3em;
+    top: auto;
+    bottom: 0;
+    transform: translate(0, 50%) rotate(-135deg);
+}
+[data-tail=left-top]::after {
+    left: 0;
+    top: 1.05em;
+    transform: translate(-50%, 0) rotate(-45deg);
+}
+[data-tail=left-middle]::after {
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+[data-tail=left-bottom]::after {
+    left: 0;
+    top: auto;
+    bottom: 1.05em;
+    transform: translate(-50%, 0) rotate(-45deg);
+}
+[data-tail=right-top]::after {
+    left: auto;
+    right: 0;
+    top: 1.05em;
+    transform: translate(50%, 0) rotate(135deg);
+}
+[data-tail=right-middle]::after {
+    left: auto;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%) rotate(135deg);
+}
+[data-tail=right-bottom]::after {
+    left: auto;
+    right: 0;
+    top: auto;
+    bottom: 1.05em;
+    transform: translate(50%, 0) rotate(135deg);
+}

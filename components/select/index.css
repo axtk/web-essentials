@@ -1,0 +1,160 @@
+[data-shape~=select] {
+    display: inline-block;
+    vertical-align: bottom;
+    border: none;
+    border-radius: var(--control-border-radius);
+    padding: 0;
+    margin: 0;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+}
+[data-shape~=select] [type=radio] {
+    position: absolute;
+    left: -9999em;
+    height: 0;
+}
+[data-shape~=select] label:not([role=option]) {
+    line-height: var(--control-line-height);
+    white-space: nowrap;
+    background: var(--text-background);
+    border: var(--border);
+    border-radius: var(--control-border-radius);
+    padding: var(--control-padding-y) var(--option-padding-x);
+    padding-right: calc(var(--option-padding-x) + var(--select-button-size));
+    cursor: var(--clickable-cursor);
+}
+[data-shape~=select] label:not([role=option])::after {
+    content: "";
+    display: block;
+    width: var(--select-button-size);
+    height: var(--select-button-size);
+    background: var(--select-button-image-url) 50% 50%/contain no-repeat;
+    position: absolute;
+    right: calc(.5*var(--option-padding-x));
+    top: var(--control-padding-y);
+}
+[data-shape~=select] label:not([role=option]),
+[data-shape~=select] :checked ~ label:not([role=option]):last-of-type {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    max-height: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+[data-shape~=select] label:not([role=option]):last-of-type,
+[data-shape~=select] :checked + label:not([role=option]),
+[data-shape~=select] :checked + label:not([role=option]):last-of-type {
+    height: auto;
+    max-height: none;
+    visibility: visible;
+    color: transparent;
+    border-top-width: var(--border-width);
+    border-bottom-width: var(--border-width);
+    padding-top: var(--control-padding-y);
+    padding-bottom: var(--control-padding-y);
+}
+[data-shape~=select] :checked + label:not([role=option]),
+[data-shape~=select] :checked + label:not([role=option]):last-of-type {
+    color: var(--text-color);
+}
+[data-shape~=select] [role=listbox] {
+    display: none;
+    box-shadow: 0 .35em .5em .2em rgba(0, 0, 0, .1);
+    margin-top: calc(-1*var(--border-width));
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+[data-shape~=select] [role=listbox]::before {
+    content: "\a0";
+    display: block;
+    padding: var(--control-padding-y) var(--option-padding-x);
+    cursor: var(--clickable-cursor);
+    position: absolute;
+    transform: translateY(-100%);
+    top: 0;
+    left: 0;
+    right: 0;
+}
+[data-shape~=select]:active [role=listbox],
+[data-shape~=select] [role=listbox]:hover {
+    display: block;
+}
+[data-shape~=select] :focus ~ [role=listbox]:hover,
+/* focus-within will also work when the focused element is not directly adjacent to the listbox */
+[data-shape~=select]:focus-within [role=listbox]:hover {
+    display: none;
+}
+[data-shape~=select] :focus + label:not([role=option]),
+[data-shape~=select]:hover label:not([role=option]) {
+    box-shadow: var(--focused-box-shadow);
+}
+[data-focus-ring=none] [data-shape~=select] :focus + label:not([role=option]),
+[data-focus-ring=none] [data-shape~=select]:hover label:not([role=option]),
+[data-focus-ring=none] [data-shape~=select]:focus-within {
+    box-shadow: none;
+}
+@media (hover: hover) {
+    [data-shape~=select] [role=listbox] [role=option]:hover {
+        color: var(--highlight-color);
+        background: var(--highlight-background);
+    }
+    [data-shape~=select] [role=listbox] [role=option]:hover::before {
+        display: none;
+    }
+}
+[data-shape~=select] [role=listbox] [data-shape~=scrollable] {
+    display: block;
+    overflow: auto;
+}
+/* shape boxless */
+[data-shape~=select][data-shape~=boxless] label:not([role=option]) {
+    background: none transparent;
+    border-color: transparent;
+    border-radius: 0;
+}
+/* shape underline */
+[data-shape~=select][data-shape~=underline] label:not([role=option]) {
+    background: none transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 0;
+    padding-left: 0;
+}
+[data-shape~=select][data-shape~=underline] label:not([role=option])::after {
+    background-position: 100% 50%;
+    right: 0;
+}
+[data-shape~=select][data-shape~=underline] :focus + label:not([role=option]),
+[data-shape~=select][data-shape~=underline]:hover label:not([role=option]) {
+    box-shadow: var(--focused-underline-shadow);
+}
+[data-focus-ring=none] [data-shape~=select][data-shape~=underline] :focus + label:not([role=option]),
+[data-focus-ring=none] [data-shape~=select][data-shape~=underline]:hover label:not([role=option]),
+[data-focus-ring=none] [data-shape~=select][data-shape~=underline]:focus-within {
+    box-shadow: none;
+}
+/* rtl */
+[dir=rtl] [data-shape~=select] label:not([role=option]),
+[data-shape~=select][dir=rtl] label:not([role=option]) {
+    padding-right: var(--option-padding-x);
+    padding-left: calc(var(--option-padding-x) + var(--select-button-size));
+}
+[dir=rtl] [data-shape~=select] label:not([role=option])::after,
+[data-shape~=select][dir=rtl] label:not([role=option])::after {
+    right: auto;
+    left: calc(.5*var(--option-padding-x));
+}
+[dir=rtl] [data-shape~=select][data-shape~=underline] label:not([role=option])::after,
+[data-shape~=select][data-shape~=underline][dir=rtl] label:not([role=option])::after {
+    background-position: 0 50%;
+    left: 0;
+}

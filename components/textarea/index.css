@@ -1,0 +1,31 @@
+textarea,
+[role=textbox][aria-multiline=true] {
+    font: inherit;
+    line-height: var(--control-line-height);
+    color: var(--text-color);
+    background: var(--text-background);
+    border: var(--border);
+    border-radius: var(--control-border-radius);
+    padding: var(--control-padding-y) var(--input-padding-x);
+    box-sizing: border-box;
+}
+textarea:focus,
+[role=textbox][aria-multiline=true]:focus {
+    box-shadow: var(--focused-box-shadow);
+    outline: none;
+}
+/* shape underline */
+textarea[data-shape~=underline],
+[role=textbox][aria-multiline=true][data-shape~=underline] {
+    background-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+textarea[data-shape~=underline]:focus,
+[role=textbox][aria-multiline=true][data-shape~=underline]:focus {
+    box-shadow: var(--focused-underline-shadow);
+}

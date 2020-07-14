@@ -1,0 +1,9 @@
+[data-shape~=tip] {
+    display: inline-block;
+    font-size: var(--tip-text-size);
+    line-height: var(--control-line-height);
+    margin: var(--tip-margin-y) 0;
+}
+[data-shape~=tip][data-shape~=error] {
+    color: var(--error-color);
+}

@@ -1,0 +1,58 @@
+[role=menubar] {
+    display: flex;
+    border: var(--border);
+    border-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+ul[role=menubar] {
+    list-style: none;
+}
+[role=menubar] > li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+[role=menubar] [role=menuitem] {
+    display: block;
+    line-height: var(--control-line-height);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: var(--control-padding-y) var(--button-padding-x);
+    border: none;
+    cursor: var(--clickable-cursor);
+    position: relative;
+}
+[role=menubar] [role=menuitem]::after {
+    display: block;
+    content: "";
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color .2s;
+}
+@media (hover: hover) {
+    [role=menubar] [role=menuitem]:hover::after {
+        background-color: var(--control-hover-mask-background);
+    }
+}
+[role=menubar] [role=menuitem]:focus {
+    box-shadow: none;
+    outline: none;
+}
+[role=menubar] [role=menuitem]:focus::after {
+    background-color: var(--control-hover-mask-background);
+}
+[data-focus-ring=none] [role=menubar] [role=menuitem]:not(:hover):focus::after {
+    background-color: transparent;
+}
+[role=menubar] [role=menuitem][aria-selected=true] {
+    color: var(--highlight-color);
+    background-color: var(--highlight-background);
+}
+[role=menubar] [role=separator] {
+    display: none;
+}

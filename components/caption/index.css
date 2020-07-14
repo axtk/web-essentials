@@ -1,0 +1,28 @@
+[data-shape~=caption] {
+    display: inline-block;
+    line-height: var(--control-line-height);
+}
+[data-shape~=caption][data-shape~=textinput],
+[data-shape~=caption][data-shape~=textarea],
+[data-shape~=caption][data-shape~=button],
+[data-shape~=caption][data-shape~=select],
+[data-shape~=caption][data-shape~=radiogroup],
+[data-shape~=caption][data-shape~=listbox],
+[data-shape~=caption][data-shape~=tablist],
+[data-shape~=caption][data-shape~=menubar] {
+    padding-top: calc(var(--border-width) + var(--control-padding-y));
+    padding-bottom: calc(var(--border-width) + var(--control-padding-y));
+}
+[data-shape~=caption][data-shape~=checkbox]::before,
+[data-shape~=caption][data-shape~=radiobutton]::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: var(--checkbox-size);
+}
+[data-shape~=caption][data-shape~=toggle]::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: var(--toggle-height);
+}
