@@ -6,6 +6,9 @@ _A way to customizable UIs with minimal markup_
 
 ## Guiding points
 
+The goal is to make customizable and accessible UI components available to a developer with [least effort](https://en.wikipedia.org/wiki/Principle_of_least_effort).<br>
+A way to achieve this is by&mdash;
+
 **following the conventional API**<br>
 the web components API should conform to HTML without introducing another API serving the same purpose:<br>
 &mdash; web components should be represented by the semantically closest match in HTML;<br>
@@ -15,7 +18,7 @@ the web components API should conform to HTML without introducing another API se
 **avoiding trivial markup wrappers or additional class names**
 
 **maintaining components' dimensions without introducing size presets**<br>
-components should scale consistently with the content out of the box &rarr;<br>
+components should scale consistently with the surrounding content out of the box &rarr;<br>
 `font-size` of the environment and relative dimensions in `em` units should be sufficient.
 
 **introducing JS only when necessary**<br>
