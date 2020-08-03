@@ -108,6 +108,10 @@
     left: 0;
     opacity: 1;
 }
+[role=listbox][data-shape~=checklist] [type=checkbox][disabled],
+[role=listbox][data-shape~=checklist] [type=radio][disabled] {
+    opacity: var(--disabled-opacity);
+}
 [role=listbox][data-shape~=checklist] [type=checkbox]:checked,
 [role=listbox][data-shape~=checklist] [type=radio]:checked {
     background-color: transparent;
