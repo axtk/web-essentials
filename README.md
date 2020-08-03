@@ -6,8 +6,11 @@ _A way to customizable UIs with minimal markup_
 
 ## Guiding points
 
-The goal is to make customizable and accessible UI components available to a developer with [least effort](https://en.wikipedia.org/wiki/Principle_of_least_effort).<br>
-A way to achieve this is by&mdash;
+The goal is to make customizable and accessible UI components available to a developer with [least effort](https://en.wikipedia.org/wiki/Principle_of_least_effort).
+
+Approaches introducing custom APIs for web components disregard the developer's familiarity with HTML features instead of taking instant advantage of it. Custom APIs are also more likely to end up with inconsistencies and version compatibility issues than a conventional standard developed by a dedicated working group (such as WHATWG). Abandoning the standard would only make sense if the standard proved hard to use, which is apparently not the case with HTML.
+
+A way worth starting with is&mdash;
 
 **following the conventional API**<br>
 the web components API should conform to HTML without introducing another API serving the same purpose:<br>
@@ -18,11 +21,11 @@ the web components API should conform to HTML without introducing another API se
 **avoiding trivial markup wrappers or additional class names**
 
 **maintaining components' dimensions without introducing size presets**<br>
-components should scale consistently with the surrounding content out of the box &rarr;<br>
+components should scale consistently with the surrounding content out of the box;<br>
 `font-size` of the environment and relative dimensions in `em` units should be sufficient.
 
 **introducing JS only when necessary**<br>
-so far, no JS has been required for the components in this package.
+no JS has been required for the components in this package yet.
 
 In essence:
 
